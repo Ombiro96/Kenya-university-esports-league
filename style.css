@@ -146,6 +146,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-top: 2px solid gray;
 }
 
 .footer-content-brand{
