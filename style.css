@@ -52,16 +52,6 @@ ul{
     padding: 0;
 }
 
-ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-decoration: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
 ul > li{
     padding: 0.6em;
 }
@@ -69,6 +59,10 @@ ul > li{
 ul > li > a{
     color: #fff;
     text-decoration: none;
+}
+
+ul > li > a:hover{
+    text-decoration: underline;
 }
 
 .header-social{
@@ -164,7 +158,10 @@ footer{
 .information-container{
     display: flex;
     justify-content: space-around;
+    color: white;
+    font-weight: none;
     padding: 0 2em;
+    margin: 1em 0;
 }
 
 .information{
@@ -177,12 +174,16 @@ footer{
     flex-direction: column;
 }
 
+.information > ul > li{
+    padding: 0;
+}
+
 .information > ul > li > a{
     color: gray;
 }
 
 .information > ul > li > a:hover{
-    color: white;
+    text-decoration: underline;
 }
 
 .contact{
@@ -195,12 +196,16 @@ footer{
     flex-direction: column;
 }
 
+.contact > ul > li{
+    padding: 0;
+}
+
 .contact > ul > li > a{
     color: gray;
 }
 
 .contact > ul > li > a:hover{
-    color: white;
+    text-decoration: underline;
 }
 
 .links-of-interest{
@@ -213,12 +218,16 @@ footer{
     flex-direction: column;
 }
 
+.links-of-interest > ul > li{
+    padding: 0;
+}
+
 .links-of-interest > ul > li > a{
     color: gray;
 }
 
 .links-of-interest > ul > li > a:hover{
-    color: white;
+    text-decoration: underline;
 }
 
 .footer-container{
@@ -326,6 +335,12 @@ footer{
     padding: 1em 0;
 }
 
+.games-carousel > a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
 .game-card {
     background-color: #333;
     color: white;
@@ -333,8 +348,8 @@ footer{
     min-width: 150px;
     max-width: 150px;
     height: 250px;
+    border: 2px solid gray;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Default red shadow */
     text-align: center;
     flex: 0 0 auto;
     scroll-snap-align: start;
@@ -356,15 +371,16 @@ footer{
     background-image: url('wp13111909-efootball-2024-wallpapers.png');
     background-size: cover;
     background-position: center;
-    box-shadow: 0 0 20px yellow;
 }
 
 .game-card:hover {
+    border: 2px solid red;
     box-shadow: 0 0 20px red;
     transform: translateY(-5px);
 }
 
 .efootball:hover{
+    border: 2px solid yellow;
     box-shadow: 0 0 20px yellow;
     transform: translateY(-5px);
 }
@@ -373,10 +389,10 @@ footer{
     background-image: url('fortnite-1920x1080-hd-ldycemyqolid6ppy.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 0 0 20px skyblue;
 }
 
 .fortnite:hover{
+    border: 2px solid skyblue;
     box-shadow: 0 0 20px skyblue;
     transform: translateY(-5px);
 }
@@ -385,10 +401,10 @@ footer{
     background-image: url('6259-3840x2160-desktop-4k-call-of-duty-wallpaper.jpg');
     background-size: cover;
     background-position: top;
-    box-shadow: 0 0 20px green;
 }
 
 .cod:hover{
+    border: 2px solid green;
     box-shadow: 0 0 20px green;
     transform: translateY(-5px);
 }
@@ -439,7 +455,7 @@ footer{
 
 /* Small devices (phones, 600px and below) */
 @media only screen and (max-width: 600px) {
-    nav{
+    #big-screen-menu{
         display: none;
     }
 
