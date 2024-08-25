@@ -14,7 +14,7 @@
           <a href="/" class="logo">
             <img src="KUER-logo.png" alt="KUER logo" height="80px">
           </a>
-          <nav>
+          <nav id="big-screen-menu">
             <ul>
 
               <li>
@@ -96,8 +96,62 @@
           </div>
         </div>
 
-        <div class="menu-toggle">
+        <div class="menu-toggle" onclick=toggleMenu()>
           <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="mobile-menu">
+            <ul>
+
+            <li onclick=toggleMenu()>
+                <i style="color: white; display: flex; justify-content: end; padding-right: 1em; font-size: 1.5em;" class="fas fa-times"></i>
+            </li>
+
+            <li>
+                <a href="/news">
+                NEWS
+                </a>
+            </li>
+
+            <li>
+                <a href="/about">
+                ABOUT US
+                </a>
+            </li>
+
+            <li>
+                <a href="https://uemasters.com/" target="_blank">
+                KUER MASTERS
+                </a>
+            </li>
+
+            <li>
+                <a href="/calendar"> CALENDAR</a>
+            </li>
+
+            <li>
+                <a rel="nofollow" href="/universities">
+                UNIVERSITIES
+                </a>
+            </li>
+
+            <li>
+                <a class="arena" href="/competition"> COMPETE</a>
+            </li>
+
+            <li>
+                <a href="/register">
+                <span class="register-button">REGISTER</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/login">
+                Log in
+                </a>
+            </li>
+
+            </ul>
         </div>
     </header>
     <div id="main">

@@ -1,4 +1,4 @@
 function toggleMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.classList.toggle('open');
 }
