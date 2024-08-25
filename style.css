@@ -1,10 +1,10 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0em;
 }
 
 body{
-    background-color: #f0f0f0;
+    background-color: black;
     margin: 0;
     padding: 0;
     display: flex;
@@ -16,42 +16,289 @@ body{
 header {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 1em;
+    font-size: 1em;
+    padding: 1em 0 0 0;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#main{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    padding: 1em; */
-    position: relative;
-    min-height: 60vh;
-}
-
-footer{
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
-nav > ul {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    margin-right: 4em;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: none;
     list-style: none;
-    border: 2px solid lime;
-    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
 }
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li{
+    padding: 0.6em;
+}
+
+ul > li > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-social{
+    display: flex;
+    margin: 0 1em 0 0;
+}
+
+.header-social a {
+    color: gray;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.header-social a:hover {
+    color: white;
+}
+
+.social-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-btn{
+    background-color: #333;
+    color: green;
+    padding: 0.6em 1.4em;
+    margin-right: 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid green;
+    list-style: none;
+    text-decoration: none;
+}
+
+.login-btn:hover{
+    background-color: green;
+    color: gray;
+}
+
+#main{
+    background-color: #f0f0f0;
+    position: relative;
+    margin-top: 15vh;
+}
+
+.arena{
+    color: green;
+    transition: text-shadow 0.3s ease;
+}
+
+.arena:hover{
+    text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green;
+}
+
+.register-button{
+    background-color: green;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid green;
+    list-style: none;
+    text-decoration: none;
+}
+
+.register-button:hover{
+    border: 2px solid green;
+    box-shadow: 0 0 10px 2px green;
+}
+
+footer{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content-brand{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.information-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2em;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    margin: 0 2em;
+}
+
+.information > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.information > ul > li > a{
+    color: gray;
+}
+
+.information > ul > li > a:hover{
+    color: white;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    margin: 0 2em;
+}
+
+.contact > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact > ul > li > a{
+    color: gray;
+}
+
+.contact > ul > li > a:hover{
+    color: white;
+}
+
+.links-of-interest{
+    display: flex;
+    flex-direction: column;
+    margin: 0 2em;
+}
+
+.links-of-interest > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.links-of-interest > ul > li > a{
+    color: gray;
+}
+
+.links-of-interest > ul > li > a:hover{
+    color: white;
+}
+
+.footer-container{
+    /* padding: 0 4em; */
+    font-size: 0.8em;
+}
+
+.copyright{
+    font-size: 0.8em;
+    padding: 1em;
+    color: gray;
+}
+
+.footer-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social a {
+    color: gray;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: white;
+}
+
+
+/*main*/
+.hero {
+    background-color: black;
+    color: red;
+    text-align: center;
+    padding: 5em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    background-image: url('pexels-elti-meshau-107925-333850.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color: red;
+}
+
+.hero-text {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    color: white;
+}
+
+.button {
+    background-color: red;
+    color: black;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    color: gray;
+    box-shadow: 0 0 10px 2px red;
+}
+
