@@ -421,7 +421,7 @@ footer{
 .mobile-menu.open{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background-color: rgba(0, 0, 0, 1);
     color: black;
