@@ -11,6 +11,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    max-width: 100%;
 }
 
 header {
@@ -113,6 +114,7 @@ ul > li > a{
     background-color: #f0f0f0;
     position: relative;
     margin-top: 15vh;
+    width: 100%;
 }
 
 .arena{
@@ -167,7 +169,6 @@ footer{
 .information{
     display: flex;
     flex-direction: column;
-    margin: 0 2em;
 }
 
 .information > ul{
@@ -186,7 +187,6 @@ footer{
 .contact{
     display: flex;
     flex-direction: column;
-    margin: 0 2em;
 }
 
 .contact > ul{
@@ -205,7 +205,6 @@ footer{
 .links-of-interest{
     display: flex;
     flex-direction: column;
-    margin: 0 2em;
 }
 
 .links-of-interest > ul{
@@ -302,3 +301,213 @@ footer{
     box-shadow: 0 0 10px 2px red;
 }
 
+/*featured*/
+.featured-games {
+    background-color: black;
+    padding: 2em 1em;
+    color: red;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: red;
+}
+
+.games-carousel {
+    display: flex;
+    justify-content: space-around;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1em;
+    padding: 1em 0;
+}
+
+.game-card {
+    background-color: #333;
+    color: white;
+    padding: 2em;
+    min-width: 150px;
+    max-width: 150px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Default red shadow */
+    text-align: center;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.pubg{
+    background-image: url('wallpaperflare.com_wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.efootball{
+    background-image: url('wp13111909-efootball-2024-wallpapers.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-card:hover {
+    box-shadow: 0 0 20px red;
+    transform: translateY(-5px);
+}
+
+.efootball:hover{
+    box-shadow: 0 0 20px yellow;
+    transform: translateY(-5px);
+}
+
+.fortnite{
+    background-image: url('fortnite-1920x1080-hd-ldycemyqolid6ppy.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.fortnite:hover{
+    box-shadow: 0 0 20px skyblue;
+    transform: translateY(-5px);
+}
+
+.cod{
+    background-image: url('6259-3840x2160-desktop-4k-call-of-duty-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.cod:hover{
+    box-shadow: 0 0 20px green;
+    transform: translateY(-5px);
+}
+
+.menu-toggle{
+    display: none;
+}
+
+/* Small devices (phones, 600px and below) */
+@media only screen and (max-width: 600px) {
+    nav{
+        display: none;
+    }
+
+    .social-login{
+        display: none;
+    }
+
+    .menu-toggle{
+        display: block;
+        margin-right: 2em;
+        border: 2px solid green;
+        border-radius: 20px;
+        padding: 0.5em;
+        cursor: pointer;
+    }
+
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-text {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 0.6em 1.5em;
+        font-size: 1em;
+    }
+
+    .games-carousel {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .game-card {
+        max-width: 100%;
+        height: auto;
+        font-size: 1.5em;
+        padding: 1.5em;
+    }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    nav{
+        display: none;
+    }
+
+    .social-login{
+        display: none;
+    }
+
+    .menu-toggle{
+        display: block;
+        margin-right: 2em;
+        border: 2px solid green;
+        border-radius: 20px;
+        padding: 0.5em;
+        cursor: pointer;
+    }
+
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-text {
+        font-size: 1.2em;
+    }
+
+    .button {
+        padding: 0.7em 1.8em;
+        font-size: 1.1em;
+    }
+
+    .games-carousel {
+        flex-direction: row;
+        overflow-x: scroll;
+        padding: 1em 0;
+    }
+
+    .game-card {
+        max-width: 180px;
+        height: 220px;
+        font-size: 1.5em;
+    }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media only screen and (min-width: 1400px) {
+    .hero-title {
+        font-size: 3em;
+    }
+
+    .hero-text {
+        font-size: 1.5em;
+    }
+
+    .button {
+        padding: 0.8em 2em;
+        font-size: 1.2em;
+    }
+
+    .games-carousel {
+        flex-direction: row;
+        overflow-x: scroll;
+        padding: 1em 0;
+    }
+
+    .game-card {
+        max-width: 150px;
+        height: 250px;
+        font-size: 2em;
+    }
+}
