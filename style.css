@@ -17,12 +17,12 @@ body{
 header {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    font-size: 1em;
-    padding: 1em 0;
+    font-size: 0.8em;
+    padding: 0.5em 0;
     position: fixed;
     top: 0;
     left: 0;
-    height: 10vh;
+    max-height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@ ul > li > a:hover{
 #main{
     background-color: #f0f0f0;
     position: relative;
-    margin-top: 15vh;
+    margin-top: 10vh;
     width: 100%;
 }
 
@@ -263,7 +263,7 @@ footer{
 /*main*/
 .hero {
     background-color: black;
-    color: red;
+    color: rgb(190,4,10);
     text-align: center;
     padding: 5em 1em;
     display: flex;
@@ -286,7 +286,7 @@ footer{
 .hero-title {
     font-size: 3em;
     margin-bottom: 0.5em;
-    color: red;
+    color: rgb(190,4,10);
 }
 
 .hero-text {
@@ -296,7 +296,7 @@ footer{
 }
 
 .button {
-    background-color: red;
+    background-color: rgb(190,4,10);
     color: black;
     padding: 0.8em 2em;
     border: none;
@@ -309,31 +309,36 @@ footer{
 
 .button:hover {
     color: gray;
-    box-shadow: 0 0 10px 2px red;
+    box-shadow: 0 0 10px 2px rgb(190,4,10);
 }
 
 /*featured*/
 .featured-games {
     background-color: black;
     padding: 2em 1em;
-    color: red;
+    color: rgb(190,4,10);
     text-align: center;
 }
 
 .section-title {
     font-size: 2em;
     margin-bottom: 1em;
-    color: red;
+    color: rgb(190,4,10);
+}
+
+.games-carousel-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .games-carousel {
     display: flex;
-    justify-content: space-around;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    scroll-behavior: smooth;
     gap: 1em;
     padding: 1em 0;
+    transition: transform 0.3s ease-in-out;
 }
 
 .games-carousel > a{
@@ -346,9 +351,9 @@ footer{
     background-color: #333;
     color: white;
     padding: 2em;
-    min-width: 150px;
-    max-width: 150px;
-    height: 250px;
+    min-width: 80px;
+    max-width: 80px;
+    height: 120px;
     border: 2px solid gray;
     border-radius: 10px;
     text-align: center;
@@ -358,8 +363,33 @@ footer{
     display: flex;
     justify-content: center;
     align-items: end;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1em;
+}
+
+.flicker-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgb(190,4,10);
 }
 
 .pubg{
@@ -375,8 +405,8 @@ footer{
 }
 
 .game-card:hover {
-    border: 2px solid red;
-    box-shadow: 0 0 20px red;
+    border: 2px solid rgb(190,4,10);
+    box-shadow: 0 0 20px rgb(190,4,10);
     transform: translateY(-5px);
 }
 
