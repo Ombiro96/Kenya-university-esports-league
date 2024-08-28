@@ -17,12 +17,12 @@ body{
 header {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    font-size: 0.8em;
-    padding: 0.5em 0;
+    font-size: 1em;
+    padding: 1em 0;
     position: fixed;
     top: 0;
     left: 0;
-    max-height: 10vh;
+    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@ ul > li > a:hover{
 #main{
     background-color: #f0f0f0;
     position: relative;
-    margin-top: 10vh;
+    margin-top: 15vh;
     width: 100%;
 }
 
@@ -263,7 +263,7 @@ footer{
 /*main*/
 .hero {
     background-color: black;
-    color: rgb(190,4,10);
+    color: #960a0e;
     text-align: center;
     padding: 5em 1em;
     display: flex;
@@ -286,7 +286,7 @@ footer{
 .hero-title {
     font-size: 3em;
     margin-bottom: 0.5em;
-    color: rgb(190,4,10);
+    color: #960a0e;
 }
 
 .hero-text {
@@ -296,7 +296,7 @@ footer{
 }
 
 .button {
-    background-color: rgb(190,4,10);
+    background-color: #960a0e;
     color: black;
     padding: 0.8em 2em;
     border: none;
@@ -309,26 +309,34 @@ footer{
 
 .button:hover {
     color: gray;
-    box-shadow: 0 0 10px 2px rgb(190,4,10);
+    box-shadow: 0 0 10px 2px #960a0e;
 }
 
 /*featured*/
 .featured-games {
     background-color: black;
     padding: 2em 1em;
-    color: rgb(190,4,10);
+    color: #960a0e;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-title {
     font-size: 2em;
     margin-bottom: 1em;
-    color: rgb(190,4,10);
+    color: #960a0e;
 }
 
 .games-carousel-wrapper {
     position: relative;
     max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
     overflow: hidden;
 }
 
@@ -339,6 +347,19 @@ footer{
     gap: 1em;
     padding: 1em 0;
     transition: transform 0.3s ease-in-out;
+    max-width: 80%;
+    overflow-x: auto; /* Ensures the content stays within bounds and is scrollable */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.games-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.games-carousel .game-card {
+    flex: 0 0 auto; /* Ensures the cards do not shrink or grow */
+    max-width: 100%; /* Ensures individual cards stay within the carousel container */
 }
 
 .games-carousel > a{
@@ -375,6 +396,33 @@ footer{
     margin-top: 1em;
 }
 
+#next-btn, #prev-btn {
+    background-color: rgba(121, 5, 5, 0.7);
+    color: black;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 3em;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 900;
+}
+
+#next-btn:hover, #prev-btn:hover {
+    color: white;
+    background-color: rgba(121, 5, 5, 1.0);
+    box-shadow: 0 0 10px 2px #960a0e;
+}
+
+.card-text{
+    opacity: 0;
+}
+
+.card-text:hover{
+    opacity: 1;
+}
+
 .flicker-dots {
     display: flex;
     gap: 10px;
@@ -389,7 +437,7 @@ footer{
 }
 
 .dot.active {
-    background-color: rgb(190,4,10);
+    background-color: #960a0e;
 }
 
 .pubg{
@@ -405,8 +453,8 @@ footer{
 }
 
 .game-card:hover {
-    border: 2px solid rgb(190,4,10);
-    box-shadow: 0 0 20px rgb(190,4,10);
+    border: 2px solid #960a0e;
+    box-shadow: 0 0 20px #960a0e;
     transform: translateY(-5px);
 }
 
@@ -564,7 +612,6 @@ footer{
 
     .games-carousel {
         flex-direction: row;
-        overflow-x: scroll;
         padding: 1em 0;
     }
 
@@ -592,13 +639,13 @@ footer{
 
     .games-carousel {
         flex-direction: row;
-        overflow-x: scroll;
         padding: 1em 0;
     }
 
     .game-card {
-        max-width: 150px;
-        height: 250px;
+        max-width: 70px;
+        min-width: 70px;
+        height: 120px;
         font-size: 2em;
     }
 }

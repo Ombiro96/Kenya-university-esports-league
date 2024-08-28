@@ -1,17 +1,33 @@
-const carousel = document.querySelector('.games-carousel');
-const dots = document.querySelectorAll('.dot');
-let currentIndex = 0;
-const cardsToShow = 3;
-
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.classList.toggle('open');
 }
 
+const carousel = document.querySelector('.games-carousel');
+const flickerDotsContainer = document.querySelector('.flicker-dots');
+let currentIndex = 0;
+const cardsToShow = 3; // Number of cards visible per page
+const totalCards = carousel.children.length;
+const totalPages = Math.ceil(totalCards / cardsToShow);
+
+// Populate the dots based on the number of pages
+for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) {
+        dot.classList.add('active');
+    }
+    flickerDotsContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll('.dot');
+
 function updateCarousel() {
-    console.log("updateCarousel");
-    const offset = -currentIndex * (carousel.children[0].offsetWidth + parseFloat(getComputedStyle(carousel).gap));
-    carousel.style.transform = `translateX(${offset}px)`;
+    const scrollAmount = currentIndex * (carousel.children[0].offsetWidth + parseFloat(getComputedStyle(carousel).gap));
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+    });
     updateDots();
 }
 
@@ -26,7 +42,7 @@ function updateDots() {
 }
 
 document.getElementById('next-btn').addEventListener('click', () => {
-    if (currentIndex < carousel.children.length - cardsToShow) {
+    if (currentIndex < totalPages - 1) {
         currentIndex++;
         updateCarousel();
     }
@@ -48,4 +64,3 @@ dots.forEach((dot, index) => {
 
 // Initial update
 updateCarousel();
-
