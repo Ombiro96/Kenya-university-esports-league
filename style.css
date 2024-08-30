@@ -20,6 +20,7 @@ body{
 
 header {
     background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
     color: #fff;
     font-size: 1em;
     padding: 1em 0;
@@ -43,7 +44,7 @@ header {
 }
 
 .logo{
-    margin-right: 4em;
+    margin: 0 1em;
 }
 
 ul{
@@ -112,7 +113,7 @@ ul > li > a:hover{
 #main{
     background-color: #f0f0f0;
     position: relative;
-    margin-top: 15vh;
+    margin-top: 10vh;
     width: 100%;
 }
 
