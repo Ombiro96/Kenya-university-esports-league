@@ -597,7 +597,7 @@ footer{
 }
 
 /* Medium devices (tablets, 600px to 768px) */
-@media only screen and (min-width: 601px) and (max-width: 1200px) {
+@media only screen and (min-width: 601px) and (max-width: 768px) {
     :root{
         --card-width: 150px;
     }
@@ -643,6 +643,56 @@ footer{
         max-width: var(--card-width);
         min-width: var(--card-width);
         height: 200px;
+        font-size: 1em;
+    }
+}
+
+/* Semi-large devices (tablets, 768px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    :root{
+        --card-width: 160px;
+    }
+
+    #big-screen-menu{
+        display: none;
+    }
+
+    .social-login{
+        display: none;
+    }
+
+    .menu-toggle{
+        display: block;
+        margin-right: 2em;
+        border: 2px solid green;
+        border-radius: 20px;
+        padding: 0.5em;
+        cursor: pointer;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-text {
+        font-size: 1.2em;
+    }
+
+    .button {
+        padding: 0.7em 1.8em;
+        font-size: 1.1em;
+    }
+
+    .games-carousel {
+        flex-direction: row;
+        padding: 1em 0;
+    }
+
+    .game-card {
+        flex: 0 0 var(--card-width);
+        max-width: var(--card-width);
+        min-width: var(--card-width);
+        height: 250px;
         font-size: 1em;
     }
 }
