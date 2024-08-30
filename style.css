@@ -275,7 +275,7 @@ footer{
     justify-content: center;
     align-items: center;
     height: 40vh;
-    background-image: url('pexels-elti-meshau-107925-333850.jpg');
+    /* background-image: url('pexels-elti-meshau-107925-333850.jpg'); */
     background-size: cover;
     background-position: center;
 }
@@ -298,6 +298,33 @@ footer{
     font-size: 1.5em;
     margin-bottom: 1.5em;
     color: white;
+}
+
+.loading-bar {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background-color: #ddd;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.loading-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #960a0e;
+    animation: loading 5s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 .button {

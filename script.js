@@ -9,6 +9,14 @@ const games = [
     { name: 'Call of Duty', class: 'cod', image: '6259-3840x2160-desktop-4k-call-of-duty-wallpaper.jpg' }
 ];
 
+const images = [
+    'pexels-elti-meshau-107925-333850.jpg',
+    'wallpaperflare.com_wallpaper.jpg',
+    'wp13111909-efootball-2024-wallpapers.png',
+    'fortnite-1920x1080-hd-ldycemyqolid6ppy.jpg',
+    '6259-3840x2160-desktop-4k-call-of-duty-wallpaper.jpg'
+];
+
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.classList.toggle('open');
@@ -18,6 +26,9 @@ const carousel = document.querySelector('.games-carousel');
 const flickerDotsContainer = document.querySelector('.flicker-dots');
 let currentIndex = 0;
 const cardsToShow = 3;
+const hero = document.querySelector('.hero');
+
+let currentImageIndex = 0;
 
 games.forEach(game => {
     const card = document.createElement('div');
@@ -34,6 +45,10 @@ games.forEach(game => {
 
 const totalCards = carousel.children.length;
 const totalPages = Math.ceil(totalCards / cardsToShow);
+
+const loadingBarFill = document.createElement('div');
+loadingBarFill.classList.add('loading-bar-fill');
+document.querySelector('.loading-bar').appendChild(loadingBarFill);
 
 for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement('span');
@@ -97,4 +112,14 @@ dots.forEach((dot, index) => {
     });
 });
 
+function changeBackgroundImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    hero.style.backgroundImage = `url(${images[currentImageIndex]})`;
+}
+
+
+
+setInterval(changeBackgroundImage, 5000);
+
 updateCarousel();
+changeBackgroundImage();
