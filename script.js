@@ -6,11 +6,10 @@ function toggleMenu() {
 const carousel = document.querySelector('.games-carousel');
 const flickerDotsContainer = document.querySelector('.flicker-dots');
 let currentIndex = 0;
-const cardsToShow = 3; // Number of cards visible per page
+const cardsToShow = 3;
 const totalCards = carousel.children.length;
 const totalPages = Math.ceil(totalCards / cardsToShow);
 
-// Populate the dots based on the number of pages
 for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
@@ -41,6 +40,17 @@ function updateDots() {
     });
 }
 
+function nextPage() {
+    if (currentIndex < totalPages - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+}
+
+setInterval(nextPage, 5000);
+
 document.getElementById('next-btn').addEventListener('click', () => {
     if (currentIndex < totalPages - 1) {
         currentIndex++;
@@ -62,5 +72,4 @@ dots.forEach((dot, index) => {
     });
 });
 
-// Initial update
 updateCarousel();
