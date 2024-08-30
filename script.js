@@ -1,3 +1,14 @@
+const games = [
+    { name: 'PUBG', class: 'pubg', image: 'wallpaperflare.com_wallpaper.jpg' },
+    { name: 'eFootball', class: 'efootball', image: 'wp13111909-efootball-2024-wallpapers.png' },
+    { name: 'Fortnite', class: 'fortnite', image: 'fortnite-1920x1080-hd-ldycemyqolid6ppy.jpg' },
+    { name: 'Call of Duty', class: 'cod', image: '6259-3840x2160-desktop-4k-call-of-duty-wallpaper.jpg' },
+    { name: 'PUBG', class: 'pubg', image: 'wallpaperflare.com_wallpaper.jpg' },
+    { name: 'eFootball', class: 'efootball', image: 'wp13111909-efootball-2024-wallpapers.png' },
+    { name: 'Fortnite', class: 'fortnite', image: 'fortnite-1920x1080-hd-ldycemyqolid6ppy.jpg' },
+    { name: 'Call of Duty', class: 'cod', image: '6259-3840x2160-desktop-4k-call-of-duty-wallpaper.jpg' }
+];
+
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.classList.toggle('open');
@@ -7,6 +18,20 @@ const carousel = document.querySelector('.games-carousel');
 const flickerDotsContainer = document.querySelector('.flicker-dots');
 let currentIndex = 0;
 const cardsToShow = 3;
+
+games.forEach(game => {
+    const card = document.createElement('div');
+    card.classList.add('game-card', game.class);
+    card.style.backgroundImage = `url(${game.image})`;
+
+    const cardText = document.createElement('span');
+    cardText.classList.add('card-text');
+    cardText.textContent = game.name;
+
+    card.appendChild(cardText);
+    carousel.appendChild(card);
+});
+
 const totalCards = carousel.children.length;
 const totalPages = Math.ceil(totalCards / cardsToShow);
 
